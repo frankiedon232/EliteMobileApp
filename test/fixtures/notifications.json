@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "42",
+      "type": "offline",
+      "title": "ATM Offline",
+      "body": "90000001 · Ikeja is offline since 10:42",
+      "terminal_id": "90000001",
+      "severity": "critical",
+      "route": "/terminal/90000001",
+      "sent_at": "2026-09-24T10:42:00+01:00"
+    },
+    {
+      "id": "41",
+      "type": "daily_summary",
+      "title": "Elite daily summary · 120 ATMs",
+      "body": "In service 91.7% · 6 offline",
+      "terminal_id": null,
+      "severity": "info",
+      "route": "/dashboard",
+      "sent_at": "2026-09-24T08:00:00+01:00"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "per_page": 20,
+    "total": 2,
+    "total_pages": 1
+  }
+}

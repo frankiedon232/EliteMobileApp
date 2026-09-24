@@ -5,31 +5,51 @@
   "editor.quickSuggestions": {
     "strings": "on"
   },
-  "tailwindCSS.classAttributes": ["class", "ui"],
-  "tailwindCSS.experimental.classRegex": [["['\"`]([^'\"`]*)['\"`]"]],
-
+  "tailwindCSS.classAttributes": [
+    "class",
+    "ui"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "['\"`]([^'\"`]*)['\"`]"
+    ]
+  ],
   "explorer.compactFolders": false,
   "prettier.ignorePath": ".prettierignore",
-
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Monokai",
   "workbench.preferredHighContrastColorTheme": "Dark 2026",
   "workbench.preferredHighContrastLightColorTheme": "Dark 2026",
   "workbench.colorTheme": "Dark Modern",
-  "workbench.preferredLightColorTheme": "Abyss"
+  "workbench.preferredLightColorTheme": "Abyss",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      110
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "dart.lineLength": 110,
+  "files.exclude": {
+    "**/*.g.dart": false
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.g.dart, ${capture}.freezed.dart"
+  }
 }

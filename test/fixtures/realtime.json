@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": [
+    {
+      "terminal_id": "10441234",
+      "location": "IKEJA ALLEN",
+      "sol_id": "001",
+      "region": "South West",
+      "state": "Lagos",
+      "brand": "NCR-S2",
+      "samples": 288,
+      "uptime": 91.32,
+      "downtime": 8.68,
+      "offline": 5.21,
+      "closed": 2.08,
+      "cash_jam": 1.39,
+      "no_data": false
+    },
+    {
+      "terminal_id": "10449999",
+      "location": "IKEJA ALLEN",
+      "sol_id": "001",
+      "region": "South West",
+      "state": "Lagos",
+      "brand": "NCR-S2",
+      "samples": 0,
+      "uptime": null,
+      "downtime": null,
+      "offline": null,
+      "closed": null,
+      "cash_jam": null,
+      "no_data": true
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "per_page": 20,
+    "total": 1234,
+    "total_pages": 62,
+    "summary": {
+      "date": "2026-09-24",
+      "average_uptime": 93.4,
+      "below_threshold": 57,
+      "threshold": 90
+    }
+  }
+}
