@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "region": "South West",
+    "total": 1234,
+    "generated_at": "2026-09-24T10:42:00+01:00",
+    "status": {
+      "in_service": {
+        "count": 1000,
+        "percentage": 81.04
+      },
+      "offline": {
+        "count": 114,
+        "percentage": 9.24
+      },
+      "closed": {
+        "count": 60,
+        "percentage": 4.86
+      },
+      "supervisor": {
+        "count": 60,
+        "percentage": 4.86
+      }
+    },
+    "cash": {
+      "no_cash": {
+        "count": 12,
+        "percentage": 0.97
+      },
+      "low_cash": {
+        "count": 200,
+        "percentage": 16.21
+      },
+      "moderate_cash": {
+        "count": 500,
+        "percentage": 40.52
+      },
+      "high_cash": {
+        "count": 480,
+        "percentage": 38.9
+      },
+      "cash_jam": {
+        "count": 42,
+        "percentage": 3.4
+      }
+    },
+    "performance": {
+      "uptime": 81.04,
+      "in_progress": 9.72,
+      "downtime": 9.24
+    }
+  }
+}

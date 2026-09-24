@@ -1,0 +1,15 @@
+{
+  "success": false,
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Human readable",
+    "details": {
+      "per_page": [
+        "must be at most 100"
+      ],
+      "sort": [
+        "unknown value"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "data": {
+    "user": {
+      "id": "12",
+      "username": "john.doe",
+      "display_name": "john doe",
+      "email": "john.doe@providusbank.com",
+      "phone": null,
+      "avatar_url": null,
+      "role": "Admin"
+    },
+    "scope": {
+      "regions": [
+        "South West",
+        "North Central"
+      ],
+      "states": [
+        "All"
+      ],
+      "atms": [
+        "All"
+      ]
+    },
+    "expires_at": "2026-09-24T22:42:00+01:00"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "data": [
+    {
+      "key": "all",
+      "label": "All"
+    },
+    {
+      "key": "idle",
+      "label": "Idle"
+    },
+    {
+      "key": "online",
+      "label": "Online"
+    },
+    {
+      "key": "offline",
+      "label": "Offline"
+    },
+    {
+      "key": "closed",
+      "label": "Closed"
+    },
+    {
+      "key": "supervisor",
+      "label": "Supervisor"
+    },
+    {
+      "key": "cash_jam",
+      "label": "Cash Jam"
+    },
+    {
+      "key": "no_cash",
+      "label": "No Cash"
+    },
+    {
+      "key": "low_cash",
+      "label": "Low Cash"
+    },
+    {
+      "key": "moderate_cash",
+      "label": "Moderate Cash"
+    },
+    {
+      "key": "high_cash",
+      "label": "High Cash"
+    }
+  ]
+}

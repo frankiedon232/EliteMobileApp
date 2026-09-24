@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "access_token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "token_type": "Bearer",
+    "expires_at": "2026-09-24T22:42:00+01:00",
+    "user": {
+      "id": "12",
+      "username": "john.doe",
+      "display_name": "john doe",
+      "email": "john.doe@providusbank.com",
+      "phone": null,
+      "avatar_url": null,
+      "role": "Admin"
+    },
+    "scope": {
+      "regions": [
+        "All"
+      ],
+      "states": [
+        "All"
+      ],
+      "atms": [
+        "All"
+      ]
+    }
+  }
+}

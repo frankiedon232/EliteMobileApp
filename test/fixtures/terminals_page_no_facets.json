@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": [
+    {
+      "terminal_id": "10441234",
+      "location": "IKEJA ALLEN",
+      "status": "OFFLINE",
+      "amount": 2450000.0,
+      "cash_band": "moderate",
+      "location_type": "BRANCH ATM",
+      "brand": "NCR-S2",
+      "state": "Lagos",
+      "region": "South West",
+      "sol_id": "001",
+      "last_txn_at": "2026-09-24T08:15:00+01:00",
+      "card_reader": "Card Reader OK",
+      "cash_jam": "No Cash Jams",
+      "has_cash_jam": false,
+      "is_idle": false,
+      "is_of_interest": true
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "per_page": 20,
+    "total": 1,
+    "total_pages": 1
+  }
+}

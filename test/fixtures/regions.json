@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": [
+    {
+      "value": "All",
+      "label": "All regions"
+    },
+    {
+      "value": "South West",
+      "label": "South West"
+    }
+  ]
+}

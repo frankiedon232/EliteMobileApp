@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": {
+    "platform": "android",
+    "app_version": "1.0.0",
+    "preferences": {
+      "categories": {
+        "offline": true,
+        "back_in_service": true,
+        "cash_jam": true,
+        "no_cash": true,
+        "low_cash": false,
+        "supervisor": false,
+        "closed": false,
+        "daily_summary": true
+      },
+      "regions": [
+        "All"
+      ],
+      "quiet_hours": {
+        "start": "22:00",
+        "end": "06:00"
+      },
+      "critical_bypass_quiet_hours": false
+    },
+    "registered_at": "2026-09-24T10:00:00+01:00",
+    "updated_at": "2026-09-24T10:42:00+01:00"
+  }
+}
