@@ -50,7 +50,10 @@ class CategoryTile extends StatelessWidget {
                   child: Container(
                     width: 44,
                     height: 44,
-                    decoration: BoxDecoration(color: p.surface.withValues(alpha: 0.7), shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                      color: p.surface.withValues(alpha: 0.7),
+                      shape: BoxShape.circle,
+                    ),
                     child: Icon(icon, size: 24, color: p.ink),
                   ),
                 ),

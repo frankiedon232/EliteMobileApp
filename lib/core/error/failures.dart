@@ -35,7 +35,9 @@ final class AccountLocked extends Failure {
 
 /// 401 SESSION_EXPIRED or UNAUTHENTICATED: the stored session is no longer valid.
 final class SessionExpired extends Failure {
-  const SessionExpired([super.message = 'Your session has expired. Please sign in again.']);
+  const SessionExpired([super.message = defaultMessage]);
+
+  static const defaultMessage = 'Your session has expired. Please sign in again.';
 }
 
 /// 403 FORBIDDEN_SCOPE.

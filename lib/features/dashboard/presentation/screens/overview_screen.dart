@@ -10,12 +10,14 @@ import '../../../../core/router/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/theme/status_colors.dart';
+import '../../../../core/utils/names.dart';
 import '../../../../core/widgets/category_tile.dart';
 import '../../../../core/widgets/elite_card.dart';
 import '../../../../core/widgets/phase_placeholder.dart';
 import '../../../../core/widgets/pill_chip.dart';
 import '../../../../core/widgets/round_icon_button.dart';
 import '../../../../core/widgets/section_header.dart';
+import '../../../auth/presentation/session_controller.dart';
 import '../../../reference/domain/reference_models.dart';
 
 /// Overview tab (docs/UI_DESIGN.md §6.3). M0/M1: layout, category tiles and the API connection card;
@@ -27,6 +29,8 @@ class OverviewScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final p = AppPalette.of(context);
     final text = Theme.of(context).textTheme;
+    final session = ref.watch(sessionProvider);
+    final firstName = session is SignedIn ? titleCase(session.user.displayName).split(' ').first : null;
 
     return Scaffold(
       body: SafeArea(
@@ -57,7 +61,19 @@ class OverviewScreen extends ConsumerWidget {
               const SizedBox(height: 24),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: AppTheme.screenPadding),
-                child: Text('Your ATM estate\nat a glance', style: text.displaySmall),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      firstName == null
+                          ? greeting(DateTime.now())
+                          : '${greeting(DateTime.now())}, $firstName',
+                      style: text.bodyLarge?.copyWith(color: p.inkMuted),
+                    ),
+                    const SizedBox(height: 4),
+                    Text('Your ATM estate\nat a glance', style: text.displaySmall),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
               SizedBox(

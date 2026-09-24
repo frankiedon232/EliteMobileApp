@@ -9,6 +9,7 @@ import 'app.dart';
 import 'core/config/app_config.dart';
 import 'core/config/config_providers.dart';
 import 'core/network/http_client_factory.dart';
+import 'core/storage/app_prefs.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,9 +33,12 @@ Future<void> main() async {
     return;
   }
 
+  final prefs = await SharedAppPrefs.load();
+
   runApp(
     ProviderScope(
       overrides: [
+        appPrefsProvider.overrideWithValue(prefs),
         appConfigProvider.overrideWithValue(config),
         httpClientFactoryProvider.overrideWithValue(httpClientFactory),
       ],
