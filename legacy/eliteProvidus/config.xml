@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.elite.elitesolution" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Elite Solution</name>
+    <description>
+        Elite: ATM Monitoring application developed for Banks By Unet System Tech, to monitor their ATMs
+    </description>
+    <author email="info@unetsystemtech.com" href="https://www.unetsystemtech.com">
+        Unet System Tech
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+
+    <preference name="Orientation" value="portrait" />  
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="8000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value="750" />
+
+    <preference name="DisallowOverscroll" value="true" />
+    
+    <!-- <preference name="StatusBarOverlaysWebView" value="true" /> -->
+    <preference name="StatusBarBackgroundColor" value="#011F53" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="NavigationBarBackgroundColor" value="#011F53" />
+    <preference name="KeyboardShrinksView" value="true" />
+
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-targetSdkVersion" value="30" />
+
+    <platform name="android">
+        <icon src="www/img/icons/icon-ldpi-36.png" density="ldpi" />
+        <icon src="www/img/icons/icon-mdpi-48.png" density="mdpi" />
+        <icon src="www/img/icons/icon-hdpi-72.png" density="hdpi" />
+        <icon src="www/img/icons/icon-xhdpi-96.png" density="xhdpi" />
+        <icon src="www/img/icons/icon-xxhdpi-114.png" density="xxhdpi" />
+        <icon src="www/img/icons/icon-xxxhdpi-192.png" density="xxxhdpi" />
+
+        <splash src="www/img/splash/screen-hdpi-landscape.png" density="land-hdpi"/>
+        <splash src="www/img/splash/screen-ldpi-landscape.png" density="land-ldpi"/>
+        <splash src="www/img/splash/screen-mdpi-landscape.png" density="land-mdpi"/>
+        <splash src="www/img/splash/screen-xhdpi-landscape.png" density="land-xhdpi"/>
+
+        <splash src="www/img/splash/screen-hdpi-portrait.png" density="port-hdpi"/>
+        <splash src="www/img/splash/screen-ldpi-portrait.png" density="port-ldpi"/>
+        <splash src="www/img/splash/screen-mdpi-portrait.png" density="port-mdpi"/>
+        <splash src="www/img/splash/screen-xhdpi-portrait.png" density="port-xhdpi"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

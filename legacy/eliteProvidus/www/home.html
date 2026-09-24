@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover"
+    />
+
+    <link rel="apple-touch-icon" href="img/f7-icon-square.html" />
+    <link rel="icon" href="img/f7-icon.html" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-4.1.3/css/bootstrap.min.css"
+    />
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css" />
+
+    <!-- swiper carousel CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css" />
+
+    <!-- app CSS -->
+    <link id="theme" rel="stylesheet" href="css/style.css" type="text/css" />
+    <link id="theme" rel="stylesheet" href="css/custome.css" type="text/css" />
+    <link
+      id="theme"
+      rel="stylesheet"
+      href="css/bootstrap-toggle.min.css"
+      type="text/css"
+    />
+    <link
+      id="theme"
+      rel="stylesheet"
+      href="css/sweetalert.css"
+      type="text/css"
+    />
+    <title>EliteProvidus</title>
+  </head>
+
+  <body
+    class="color-theme-blue push-content-right theme-light"
+    id="trigger_menu"
+  >
+    <div class="loader justify-content-center">
+      <div class="maxui-roller align-self-center">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <!-- sidebar left start -->
+      <div class="sidebar sidebar-left">
+        <div class="profile-link">
+          <a href="javascript:;" class="media mt-3">
+            <div class="w-auto h-100">
+              <figure class="avatar avatar-40">
+                <img src="img/default.jpg" alt="" />
+              </figure>
+            </div>
+            <div class="media-body">
+              <h5 class="mb-0">
+                <small
+                  ><span class="username"></span>
+                  <span class="status-online bg-success"></span
+                ></small>
+              </h5>
+              <p class="show_sub_info"></p>
+            </div>
+          </a>
+        </div>
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="home.html" id="home.html" class="sidebar-close">
+                <div class="item-title">
+                  <i class="material-icons">home</i> Home
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="dashboard.html"
+                id="dashboard.html"
+                class="sidebar-close"
+              >
+                <div class="item-title">
+                  <i class="material-icons">dashboard</i> Dashbaord
+                </div>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="javascript:void(0)"
+                class="item-link item-content dropdown-toggle"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="item-title">
+                  <i class="material-icons">menu</i> Monitoring
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monall.html'));"
+                  id="monall.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >All</a
+                >
+
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monidle.html'));"
+                  id="monidle.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Idle</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'mononline.html'));"
+                  id="mononline.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Online</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monoffline.html'));"
+                  id="monoffline.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Offline</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monclosed.html'));"
+                  id="monclosed.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Closed</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monsupervisor.html'));"
+                  id="monsupervisor.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Supervisor</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'moncashjam.html'));"
+                  id="moncashjam.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Cash Jam</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                href="javascript:void(0)"
+                class="item-link item-content dropdown-toggle"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="item-title">
+                  <i class="material-icons">poll</i> Cash Level
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monnocash.html'));"
+                  id="monnocash.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >No Cash</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monlowcash.html'));"
+                  id="monlowcash.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Low Cash</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monmoderatecash.html'));"
+                  id="monmoderatecash.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Moderate Cash</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'monhighcash.html'));"
+                  id="monhighcash.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >High Cash</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                href="javascript:void(0)"
+                class="item-link item-content dropdown-toggle"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="item-title">
+                  <i class="material-icons">kitchen</i> Terminal Mode
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'terminallookup.html'));"
+                  id="terminallookup.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Terminal Lookup</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                href="javascript:void(0)"
+                class="item-link item-content dropdown-toggle"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="item-title">
+                  <i class="material-icons">donut_small</i> Performance
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'perfrealt.html'));"
+                  id="perfrealt.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Performance RealTime</a
+                >
+                <a
+                  href="javascript:;"
+                  onclick="return initload((page = 'perfreport.html'));"
+                  id="perfreport.html"
+                  class="sidebar-close dropdown-item ldp"
+                  >Performance Report</a
+                >
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a
+                href="backedoutterms.html"
+                id="backedoutterms.html"
+                class="sidebar-close"
+              >
+                <div class="item-title">
+                  <i class="material-icons">do_not_disturb_off</i> Backed-Out
+                  Terminals
+                </div>
+              </a>
+            </li>
+
+            <hr />
+            <li class="nav-item">
+              <a
+                href="javascript:void(0)"
+                onclick="logOut()"
+                class="sidebar-close"
+              >
+                <div class="item-title">
+                  <i class="material-icons">exit_to_app</i> Logout
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- sidebar left ends -->
+
+      <!-- page main start -->
+      <div class="page">
+        <header class="row mt-4 ml-0 mb-0 mr-0 p-0 fixed-header">
+          <div class="left">
+            <a href="javascript:void(0)" class="menu-left"
+              ><i class="material-icons">menu</i></a
+            >
+          </div>
+          <div class="col center">
+            <a href="javascript:;" class="logo">
+              <figure>
+                <h5 class="username show_user_name mt-3"></h5>
+              </figure>
+            </a>
+          </div>
+          <div class="right">
+            <span class="total-count pr-3"
+              >Elite <b class="text-danger">Providus</b></span
+            >
+          </div>
+        </header>
+
+        <div class="page-content">
+          <div class="content-sticky-footer">
+            <div class="col-12 mb-2">
+              <div class="card">
+                <div class="card-body text-center">
+                  <h1 class="display-4 mt-4 show_atm_count_fmt"></h1>
+                  <p class="mb-4">
+                    Total Terminals:
+                    <span class="text-primary">From Region: </span>
+                    <b class="rgn text-danger"></b>
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col text-center">
+                      <a
+                        href="javascript:;"
+                        onclick="return initload((page = 'perfrealt.html'));"
+                        style="color: inherit"
+                      >
+                        <span class="text-success"
+                          ><b id="uptimedata"></b>%</span
+                        ><br />
+                        <span class="post-seconds">UPTIME</span>
+                      </a>
+                    </div>
+                    <div class="col text-center">
+                      <a
+                        href="javascript:;"
+                        onclick="return initload((page = 'perfrealt.html'));"
+                        style="color: inherit"
+                      >
+                        <span class="text-warning"
+                          ><b id="inprogressdata"></b>%</span
+                        ><br />
+                        <span class="post-seconds">IN-PROGRS</span>
+                      </a>
+                    </div>
+                    <div class="col text-center">
+                      <a
+                        href="javascript:;"
+                        onclick="return initload((page = 'perfrealt.html'));"
+                        style="color: inherit"
+                      >
+                        <span class="text-danger"
+                          ><b id="downtimedata"></b>%</span
+                        ><br />
+                        <span class="post-seconds">DOWNTIME</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mb-4">
+              <div class="row">
+                <div class="col-6 col-md-4 col-lg-2 mb-2">
+                  <div class="card">
+                    <div class="card-body text-center pb-1">
+                      <div class="w-100">
+                        <a href="dashboard.html">
+                          <div class="my-3">
+                            <i class="material-icons icon-2x text-primary"
+                              >dashboard</i
+                            >
+                          </div>
+                          <h4 class="font-weight-light mb-0">Dashbaord</h4>
+                          <div class="text-primary effort-time mt-3 small">
+                            go to dashboard
+                            <i class="material-icons">forward</i>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-2">
+                  <div class="card">
+                    <div class="card-body text-center pb-1">
+                      <div class="w-100">
+                        <a
+                          href="javascript:;"
+                          onclick="return initload((page = 'mononline.html'));"
+                        >
+                          <div class="my-3">
+                            <i class="material-icons icon-2x text-success"
+                              >network_check</i
+                            >
+                          </div>
+                          <h4 class="font-weight-light mb-0">Active</h4>
+                          <div class="text-success effort-time mt-3 small">
+                            view active
+                            <i class="material-icons">arrow_drop_up</i>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-2">
+                  <div class="card">
+                    <div class="card-body text-center pb-1">
+                      <div class="w-100">
+                        <a
+                          href="javascript:;"
+                          onclick="return initload((page = 'monoffline.html'));"
+                        >
+                          <div class="my-3">
+                            <i class="material-icons icon-2x text-danger"
+                              >portable_wifi_off</i
+                            >
+                          </div>
+                          <h4 class="font-weight-light mb-0">No Service</h4>
+                          <div class="text-danger effort-time mt-3 small">
+                            view offline
+                            <i class="material-icons">arrow_drop_down</i>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2 mb-2">
+                  <div class="card">
+                    <div class="card-body text-center pb-1">
+                      <div class="w-100">
+                        <a
+                          href="javascript:;"
+                          onclick="return initload((page = 'monclosed.html'));"
+                        >
+                          <div class="my-3">
+                            <i class="material-icons text-warning icon-2x"
+                              >present_to_all</i
+                            >
+                          </div>
+                          <h4 class="font-weight-light mb-0">Closed</h4>
+                          <div class="text-warning effort-time mt-3 small">
+                            view closed
+                            <i class="material-icons">arrow_drop_down</i>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- page main ends -->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Cookie jquery file -->
+    <script src="vendor/cookie/jquery.cookie.js"></script>
+
+    <!-- sparklines chart jquery file -->
+    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Circular progress gauge jquery file -->
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Swiper carousel jquery file -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+
+    <!-- Datatables start here -->
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.responsive.min.js"></script>
+    <script src="js/responsive.bootstrap4.min.js"></script>
+
+    <!-- Application main common jquery file -->
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/appjq.js"></script>
+
+    <!-- page specific script -->
+    <script src="js/no-zoom.js"></script>
+    <script src="js/swipe-menu.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+
+    <!-- Check if logged in  -->
+    <script>
+      is_logged_in();
+    </script>
+  </body>
+</html>
