@@ -10,12 +10,77 @@ import 'dart:io';
 const _navy = '#011F53';
 const _white = '#FFFFFF';
 
-/// name, canvas width, canvas height, background, wordmark colour, wordmark width.
-const _targets = <(String, int, int, String, String, int)>[
-  ('app_icon', 1024, 1024, _navy, _white, 720), // iOS + legacy Android icon (full bleed)
-  ('app_icon_foreground', 1024, 1024, 'transparent', _white, 560), // Android adaptive foreground
-  ('splash_logo', 800, 360, 'transparent', _white, 720), // pre-Android-12 / iOS splash
-  ('splash_android12', 960, 960, 'transparent', _white, 560), // Android 12+ splash icon
+/// Splash "touch": three pastel dots under the wordmark (mint, lavender, peach — the category tiles).
+const _dotColors = ['#7FD9C4', '#8B7CF6', '#FFB595'];
+
+/// A rendered PNG: canvas size, background, wordmark colour and width, optional round badge behind the
+/// wordmark (colour), optional pastel dots.
+typedef _Target = ({
+  String name,
+  int w,
+  int h,
+  String bg,
+  String color,
+  int wordmark,
+  String? circle,
+  bool dots,
+});
+
+const List<_Target> _targets = [
+  // Launcher icon: brand navy (unchanged).
+  (name: 'app_icon', w: 1024, h: 1024, bg: _navy, color: _white, wordmark: 720, circle: null, dots: false),
+  (
+    name: 'app_icon_foreground',
+    w: 1024,
+    h: 1024,
+    bg: 'transparent',
+    color: _white,
+    wordmark: 560,
+    circle: null,
+    dots: false,
+  ),
+  // Splash (pre-Android-12 + iOS): wordmark in a round badge on the pastel canvas, light and dark.
+  (
+    name: 'splash_light',
+    w: 720,
+    h: 720,
+    bg: 'transparent',
+    color: _navy,
+    wordmark: 330,
+    circle: '#FFFFFF',
+    dots: true,
+  ),
+  (
+    name: 'splash_dark',
+    w: 720,
+    h: 720,
+    bg: 'transparent',
+    color: _white,
+    wordmark: 330,
+    circle: '#191A23',
+    dots: true,
+  ),
+  // Android 12+: the system draws the round badge (icon_background_color); the image is its content.
+  (
+    name: 'splash_android12_light',
+    w: 960,
+    h: 960,
+    bg: 'transparent',
+    color: _navy,
+    wordmark: 440,
+    circle: null,
+    dots: true,
+  ),
+  (
+    name: 'splash_android12_dark',
+    w: 960,
+    h: 960,
+    bg: 'transparent',
+    color: _white,
+    wordmark: 440,
+    circle: null,
+    dots: true,
+  ),
 ];
 
 Future<void> main() async {
@@ -26,13 +91,34 @@ Future<void> main() async {
   final browser = _findBrowser();
   final tmp = Directory.systemTemp.createTempSync('elite_brand');
 
-  for (final (name, w, h, bg, color, wordmarkWidth) in _targets) {
+  for (final t in _targets) {
+    final (
+      name: name,
+      w: w,
+      h: h,
+      bg: bg,
+      color: color,
+      wordmark: wordmarkWidth,
+      circle: circle,
+      dots: dots,
+    ) = t;
+    final dot = (wordmarkWidth * 0.075).round();
+    final dotsHtml = dots
+        ? '<div style="display:flex;gap:${(dot * 0.8).round()}px;justify-content:center;margin-top:${dot * 2}px">'
+              '${_dotColors.map((c) => '<i style="width:${dot}px;height:${dot}px;border-radius:50%;background:$c"></i>').join()}'
+              '</div>'
+        : '';
+    final badge = circle == null
+        ? ''
+        : 'width:${(w * 0.88).round()}px;height:${(h * 0.88).round()}px;border-radius:50%;background:$circle;'
+              'box-shadow:0 ${(w * 0.02).round()}px ${(w * 0.06).round()}px rgba(40,32,90,.12);';
     final html = File('${tmp.path}$sep$name.html')
       ..writeAsStringSync(
         '<!doctype html><html><head><style>html,body{margin:0;width:${w}px;height:${h}px;background:$bg;'
-        'overflow:hidden}.c{width:${w}px;height:${h}px;display:flex;align-items:center;justify-content:center;'
-        'color:$color}.w{width:${wordmarkWidth}px}</style></head><body><div class="c"><div class="w">$svg'
-        '</div></div></body></html>',
+        'overflow:hidden}.c{width:${w}px;height:${h}px;display:flex;align-items:center;justify-content:center}'
+        '.b{display:flex;flex-direction:column;align-items:center;justify-content:center;$badge}'
+        '.w{width:${wordmarkWidth}px;color:$color}</style></head><body><div class="c"><div class="b">'
+        '<div class="w">$svg</div>$dotsHtml</div></div></body></html>',
       );
     final out = '$root${sep}assets${sep}brand$sep$name.png';
     final result = await Process.run(browser, [

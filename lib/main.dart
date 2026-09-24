@@ -21,7 +21,7 @@ Future<void> main() async {
   // Refuse to start on an unsafe or incomplete configuration (e.g. production API in a debug build).
   final problem = config.validate();
   if (problem != null) {
-    runApp(ConfigErrorApp(message: problem));
+    _runConfigError(problem);
     return;
   }
 
@@ -29,7 +29,7 @@ Future<void> main() async {
   try {
     httpClientFactory = await HttpClientFactory.create(config);
   } on Object catch (e) {
-    runApp(ConfigErrorApp(message: 'Could not load the staging certificate: $e'));
+    _runConfigError('Could not load the staging certificate: $e');
     return;
   }
 
@@ -46,3 +46,6 @@ Future<void> main() async {
     ),
   );
 }
+
+/// The error screen has no providers, but every Riverpod app root is a [ProviderScope].
+void _runConfigError(String message) => runApp(ProviderScope(child: ConfigErrorApp(message: message)));

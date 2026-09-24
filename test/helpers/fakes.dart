@@ -11,6 +11,7 @@ import 'package:elite_mobile/features/auth/domain/auth_repository.dart';
 import 'package:elite_mobile/features/reference/data/reference_repository_impl.dart';
 import 'package:elite_mobile/features/reference/domain/reference_models.dart';
 import 'package:elite_mobile/features/reference/domain/reference_repository.dart';
+import 'package:flutter/material.dart' show ThemeMode;
 import 'package:flutter_riverpod/misc.dart' show Override;
 
 import 'api_harness.dart';
@@ -42,6 +43,12 @@ class MemoryPrefs implements AppPrefs {
   String? rememberedUsername;
 
   @override
+  ThemeMode themeMode = ThemeMode.system;
+
+  @override
+  Future<void> setThemeMode(ThemeMode mode) async => themeMode = mode;
+
+  @override
   Future<void> setOnboardingSeen() async => onboardingSeen = true;
 
   @override
@@ -51,7 +58,9 @@ class MemoryPrefs implements AppPrefs {
   }
 }
 
-final testUser = User.fromJson((fixture('login')['data'] as Map<String, dynamic>)['user'] as Map<String, dynamic>);
+final testUser = User.fromJson(
+  (fixture('login')['data'] as Map<String, dynamic>)['user'] as Map<String, dynamic>,
+);
 const testScope = Scope(regions: ['All'], states: ['All'], atms: ['All']);
 
 /// Configurable [AuthRepository]: set [loginError] / [meError] / [logoutError] to make a call fail.

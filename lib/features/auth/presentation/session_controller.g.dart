@@ -43,7 +43,7 @@ final class SessionProvider extends $NotifierProvider<Session, SessionState> {
   }
 }
 
-String _$sessionHash() => r'a48f3c19b007d7b4144116413bb002866997b269';
+String _$sessionHash() => r'0ec90029035cc8d624dabfebc59911ea9e381bba';
 
 /// Holds the session (docs/ARCHITECTURE.md §3). Token in secure storage; `/auth/me` on start;
 /// any 401 from the API → signed out with a "session expired" message.

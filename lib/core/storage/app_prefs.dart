@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart' show ThemeMode;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,6 +13,10 @@ abstract interface class AppPrefs {
   bool get rememberUsername;
   String? get rememberedUsername;
   Future<void> setRememberedUsername({required bool remember, String? username});
+
+  /// Light / Dark / Auto (system). Default Auto.
+  ThemeMode get themeMode;
+  Future<void> setThemeMode(ThemeMode mode);
 }
 
 /// Overridden in `main.dart` with [SharedAppPrefs.load].
@@ -30,6 +35,7 @@ class SharedAppPrefs implements AppPrefs {
   static const _onboardingSeen = 'onboarding_seen';
   static const _rememberUsername = 'remember_username';
   static const _username = 'remembered_username';
+  static const _themeMode = 'theme_mode';
 
   @override
   bool get onboardingSeen => _prefs.getBool(_onboardingSeen) ?? false;
@@ -52,4 +58,10 @@ class SharedAppPrefs implements AppPrefs {
       await _prefs.remove(_username);
     }
   }
+
+  @override
+  ThemeMode get themeMode => ThemeMode.values.asNameMap()[_prefs.getString(_themeMode)] ?? ThemeMode.system;
+
+  @override
+  Future<void> setThemeMode(ThemeMode mode) => _prefs.setString(_themeMode, mode.name);
 }

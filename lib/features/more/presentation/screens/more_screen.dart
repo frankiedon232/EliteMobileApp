@@ -3,9 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_theme.dart';
+import '../../../../core/theme/theme_mode_controller.dart';
 import '../../../../core/utils/names.dart';
 import '../../../../core/widgets/elite_card.dart';
 import '../../../../core/widgets/page_scaffold.dart';
+import '../../../../core/widgets/segmented_pill.dart';
 import '../../../auth/domain/auth_models.dart';
 import '../../../auth/presentation/session_controller.dart';
 
@@ -25,6 +27,21 @@ class MoreScreen extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (session is SignedIn) _ProfileCard(user: session.user, scope: session.scope),
+          const SizedBox(height: AppTheme.cardGap),
+          EliteCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Appearance', style: Theme.of(context).textTheme.titleMedium),
+                const SizedBox(height: 12),
+                SegmentedPill<ThemeMode>(
+                  options: [for (final m in ThemeMode.values) SegmentOption(m, m.label, icon: m.icon)],
+                  selected: ref.watch(appThemeModeProvider),
+                  onChanged: (m) => ref.read(appThemeModeProvider.notifier).set(m),
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: AppTheme.cardGap),
           EliteCard(
             padding: const EdgeInsets.symmetric(vertical: 6),
